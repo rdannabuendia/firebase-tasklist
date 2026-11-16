@@ -1,0 +1,52 @@
+# Dependencias
+node_modules
+
+# Build de producción
+dist
+dist-ssr
+*.local
+
+# Variables de entorno (credenciales de Firebase)
+.env
+.env.*
+!.env.example
+
+# Firebase (caché y logs locales)
+.firebase/
+firebase-debug.log*
+firebase-debug.*.log
+ui-debug.log
+firestore-debug.log
+database-debug.log
+pubsub-debug.log
+.runtimeconfig.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor / sistema operativo
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cobertura de tests y caché
+coverage
+.cache
+.eslintcache
+*.tsbuildinfo
+
+# Archivos de PWA generados en desarrollo
+dev-dist

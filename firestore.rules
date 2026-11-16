@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /tareas/{tareaId} {
+      // Leer: solo si la tarea es tuya
+      allow read: if request.auth != null
+                  && resource.data.uid == request.auth.uid;
+
+      // Crear: debes estar logueado, poner tu propio uid y mandar un título válido
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.titulo is string
+                    && request.resource.data.titulo.size() > 0
+                    && request.resource.data.completada is bool;
+
+      // Editar: solo tus tareas y sin poder cambiar el dueño
+      allow update: if request.auth != null
+                    && resource.data.uid == request.auth.uid
+                    && request.resource.data.uid == request.auth.uid;
+
+      // Borrar: solo tus tareas
+      allow delete: if request.auth != null
+                    && resource.data.uid == request.auth.uid;
+    }
+  }
+}

@@ -1,0 +1,296 @@
+/* ============ Variables ============ */
+:root {
+  --primario: #6366f1;
+  --primario-oscuro: #4f46e5;
+  --fondo: #f1f5f9;
+  --tarjeta: #ffffff;
+  --texto: #1e293b;
+  --texto-suave: #64748b;
+  --borde: #e2e8f0;
+  --peligro: #ef4444;
+  --peligro-fondo: #fef2f2;
+  --exito: #22c55e;
+  --radio: 12px;
+  --sombra: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* ============ Base ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 50%, #fce7f3 100%);
+  background-attachment: fixed;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ============ Controles ============ */
+input[type='email'],
+input[type='password'],
+input[type='text'],
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: var(--primario);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 11px 16px;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: #f8fafc;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-primario {
+  color: #fff;
+  background: var(--primario);
+  border-color: var(--primario);
+}
+
+.btn-primario:hover {
+  background: var(--primario-oscuro);
+}
+
+.btn-google {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.btn-enlace {
+  padding: 0;
+  color: var(--primario);
+  background: none;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-enlace:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.btn-chico {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.btn-peligro {
+  color: var(--peligro);
+  border-color: #fecaca;
+}
+
+.btn-peligro:hover {
+  background: var(--peligro-fondo);
+}
+
+/* ============ Login ============ */
+.login-pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 28px;
+  background: var(--tarjeta);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+.tarjeta h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: grid;
+  gap: 12px;
+}
+
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+.separador::before,
+.separador::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--borde);
+}
+
+.cambio-modo {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.error {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  color: var(--peligro);
+  background: var(--peligro-fondo);
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+}
+
+/* ============ Tareas ============ */
+.tareas-pagina {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.tareas-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.correo-usuario {
+  margin: 4px 0 20px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.nueva-tarea {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: var(--tarjeta);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.nueva-tarea input {
+  flex: 1;
+}
+
+.lista-tareas {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tarea:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.tarea input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--primario);
+  cursor: pointer;
+}
+
+.tarea-texto {
+  flex: 1;
+  word-break: break-word;
+}
+
+.tarea.completada .tarea-texto {
+  color: var(--texto-suave);
+  text-decoration: line-through;
+}
+
+.tarea-acciones {
+  display: flex;
+  gap: 6px;
+}
+
+.tarea-edicion {
+  flex: 1;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tarea-edicion input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 10px;
+}
+
+.vacio {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* ============ Móvil ============ */
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 24px 18px;
+  }
+
+  .tarea {
+    flex-wrap: wrap;
+  }
+
+  .tarea-acciones {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
